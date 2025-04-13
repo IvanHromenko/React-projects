@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Header from './header';
+import Header from './Header';
+import Student from './Student';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -16,6 +17,8 @@ root.render(
   <div>
     <Header />
     <Main />
+    <Student name="John Doe" experience={3} />
+    <Student name="Jane Smith" experience={5} />
     <Footer />
   </div>
 );
