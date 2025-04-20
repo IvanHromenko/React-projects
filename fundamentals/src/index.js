@@ -10,10 +10,6 @@ function Main() {
   return <h2>Main</h2>;
 }
 
-function Footer() {
-  return <h3>Footer</h3>;
-}
-
 root.render(
   <div>
     <Header />
