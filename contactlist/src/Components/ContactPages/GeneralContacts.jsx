@@ -1,11 +1,11 @@
-const FavouriteContacts = () => {
+const GeneralContacts = () => {
     return (
         <div>
         <button className="btn btn-secondary form-control"> 
-        Favourite Contacts
+            General Contact
         </button>
         </div>
     );
 }
 
-export default FavouriteContacts;
+export default GeneralContacts;
