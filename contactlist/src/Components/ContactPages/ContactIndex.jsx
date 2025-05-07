@@ -39,6 +39,21 @@ class ContactIndex extends React.Component {
     }
 
     handleAddContact = (newContact) => {
+        if(newContact.name === "") {
+            return {status: "failure", msg: "Name is required!"};
+        } else if(newContact.phone === "") {
+            return {status: "failure", msg: "Phone is required!"};
+        } else if(newContact.email === "") {
+            return {status: "failure", msg: "Email is required!"};
+        }
+        const isContactExist = this.state.contactList.filter((u) => {
+            if(u.name === newContact.name || u.phone === newContact.phone) {
+                return true;
+            };
+        });
+        if(isContactExist.length > 0) {
+            return {status: "failure", msg: "Contact already exists!"};
+        } else {
         const newContactToAdd = {...newContact, 
             id: this.state.contactList.length + 1,
             isFavorite: false};
@@ -47,7 +62,8 @@ class ContactIndex extends React.Component {
             contactList: prevState.contactList.concat([newContactToAdd]),
         };
         });    
-        alert("Contact added successfully!");
+        return{ status:"success", msg:"Contact added successfully!"};
+    }
     }
 
     render() {
