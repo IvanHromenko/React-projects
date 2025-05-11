@@ -31,6 +31,7 @@ const Contact = (props) => {
                             ? "btn-warning"
                             : "btn-outline-warning"
                     }`}
+                    onClick={() => props.favouriteClick(props.contact)}
                 >
                     <i
                         className="bi bi-star"
