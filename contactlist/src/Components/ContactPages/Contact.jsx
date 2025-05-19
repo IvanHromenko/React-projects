@@ -50,6 +50,7 @@ const Contact = (props) => {
                     <i
                         className="bi bi-trash-fill"
                         style={{ fontSize: "1rem" }}
+                        onClick={() => props.deleteContact(props.contact)}
                     ></i>
                 </button>
             </div>
