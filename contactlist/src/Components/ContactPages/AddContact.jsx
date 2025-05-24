@@ -46,7 +46,7 @@ class AddContact extends React.Component {
                 {this.state.successMessage === undefined ? (<div></div>) : (
                     <div className="col-12 text-center text-success">{this.state.successMessage}</div>
                 )}
-                <div className="col-12 col-md-4 offset-md-3 p-1">
+                <div className="col-12 col-md-4 offset-md-4 p-1">
                     <button className="btn btn-primary btn-sm form-control">
                     Create</button>
             </div>
