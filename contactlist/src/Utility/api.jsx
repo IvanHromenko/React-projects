@@ -1,21 +1,16 @@
-import axios from 'axios';
+import axios from "axios";
 
 const getRandomUser = async () => {
-  try {
-    const response = await axios.get('https://random-data-api.com/api/v2/users', {
+  const response = await axios.get(
+    "https://random-data-api.com/api/v2/users?size=2&is_xml=true",
+    {
       headers: {},
-        params: {
-            size: 1,
-            is_xml: false,
-            is_json_schema: false,
-        },
-    });
-    return response.data.results[0];
-  } catch (error) {
-    console.error('Error fetching random user:', error);
-    throw error;
-  }
-}
+      params: {
+        size: 1,
+      },
+    }
+  );
+  return response;
+};
 
-export {getRandomUser};
-// This function fetches a random user from the Random Data API and returns the first result.
+export { getRandomUser };

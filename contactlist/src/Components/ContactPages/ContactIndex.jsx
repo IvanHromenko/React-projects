@@ -1,7 +1,7 @@
 import Header from "../Layout/Header";
 import AddContact from "./AddContact";
 import AddRandomContact from "./AddRandomContact";
-import RemoveAllContacts from "./RemoveAllContacts";
+import RemoveAllContacts from "./RemoveAllContact";
 import FavouriteContacts from "./FavouriteContacts";
 import GeneralContacts from "./GeneralContacts";
 import React from "react";
@@ -88,15 +88,25 @@ class ContactIndex extends React.Component {
     }
 
     handleAddRandomContact = (newContact) => {
-        const newContactToAdd = {...newContact, 
-            id: this.state.contactList.length + 1,
-            isFavorite: false};
-        this.setState((prevState) => {
-            return {
-            contactList: prevState.contactList.concat([newContactToAdd]),
-        };
-        });
-    }
+    const newFinalContact = {
+      ...newContact,
+      id: this.state.contactList[this.state.contactList.length - 1].id + 1,
+      isFavorite: false,
+    };
+    this.setState((prevState) => {
+      return {
+        contactList: prevState.contactList.concat([newFinalContact]),
+      };
+    });
+  };
+
+  handleRemoveAllContact = () => {
+    this.setState((prevState) => {
+      return {
+        contactList: [],
+      };
+    });
+  };
 
     render() {
         return (
@@ -108,7 +118,7 @@ class ContactIndex extends React.Component {
                         <AddRandomContact handleAddRandomContact={this.handleAddRandomContact}/>
                         </div>
                     <div className="col-4 row">
-                        <RemoveAllContacts />
+                        <RemoveAllContacts handleRemoveAllContact={this.handleRemoveAllContact}/>
                     </div>
                     <div className="row py-2">
                         <div className="col-8 offset-2 row">
