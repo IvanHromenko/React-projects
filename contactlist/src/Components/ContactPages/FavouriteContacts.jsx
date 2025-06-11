@@ -11,7 +11,8 @@ const FavouriteContacts = (props) => {
         {
             props.contacts.map((contact, index) => (
                 <Contact key={index} contact={contact} favouriteClick={props.favouriteClick}
-                deleteContact={props.deleteContact}/>
+                deleteContact={props.deleteContact}
+                updateClick={props.updateClick}/>
             ))
         }
         </div>

@@ -44,6 +44,7 @@ const Contact = (props) => {
                     <i
                         className="bi bi-pencil-square"
                         style={{ fontSize: "1rem" }}
+                        onClick={() => props.updateClick(props.contact)}
                     ></i>
                 </button>
                 <button className="btn btn-danger btn-sm m-1">
